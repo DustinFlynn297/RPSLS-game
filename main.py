@@ -1,4 +1,4 @@
-from ai import AI  
+from human import Human
 
-run = AI()
+run = Human()
 print(run)
