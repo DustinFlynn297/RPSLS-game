@@ -1,4 +1,4 @@
-from human import Human
+from game import Game
 
-run = Human()
+run = Game()
 print(run)
