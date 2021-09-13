@@ -35,3 +35,6 @@ class Game:
         # if (f"{player.selection} == 'rock' && {ai.selection} == 'scissors'"):
         #     player.score += 1
         # elif (play)
+
+    def display_winner(self):
+        pass
