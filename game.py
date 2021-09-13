@@ -13,8 +13,9 @@ class Game:
     def run_game(self):
         self.welcome()
         self.playstyle()
-        self.
-        self.display_selection()
+        self.compare_gestures()
+        self.end_game()
+        
         
     
     def welcome(self):
@@ -82,7 +83,13 @@ class Game:
 
             
             
-
+    def end_game(self):
+        if(self.player1.score ==2):
+            print(self.player1.name + " has won the match!")
+        elif(self.player2.score == 2):
+            print(self.player2.name + " has won the match!")
+        else:
+            self.compare_gestures()
 
 
 
