@@ -11,13 +11,14 @@ class Human(Player):
         self.name_validation()
 
     def select_gesture(self):
-        self.gesture = input("Please select a gesture from this list: \n Rock \n Paper \n Scissors \n Lizard \n Spock \n").lower()
+        self.gesture = input("Please select a gesture from this list: " + " " + self.list_of_gestures[0] + ", " + self.list_of_gestures[1] + ", " + self.list_of_gestures[2] + ", " + self.list_of_gestures[3] + ", " + self.list_of_gestures[4] + "\n").lower()
         self.gesture_validation()
 
     def gesture_validation(self):
         if (self.gesture == 'rock' or self.gesture == 'paper' or self.gesture == 'scissors' or self.gesture == 'lizard' or self.gesture == 'spock'):
             pass
         else:
+            print("Invalid gesture selection, please try again")
             self.select_gesture()
 
     def name_validation(self):
