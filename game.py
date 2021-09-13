@@ -90,6 +90,3 @@ class Game:
         else:
             print(f"{self.player2.name} has won the match!")
         
-
-    def gesture_validation(self):
-        pass
