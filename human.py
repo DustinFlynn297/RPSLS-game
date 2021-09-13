@@ -4,7 +4,7 @@ class Human(Player):
     def __init__(self) -> None:
         super().__init__()
         self.name_selection()
-        self.select_gesture()
+        
 
     def name_selection(self):
         self.name = input("What is your name? ")

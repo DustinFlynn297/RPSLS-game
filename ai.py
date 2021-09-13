@@ -4,7 +4,6 @@ import random
 class AI(Player):
     def __init__(self) -> None:
         super().__init__()
-        self.select_gesture()
         self.ai_name()
 
     def select_gesture(self):
