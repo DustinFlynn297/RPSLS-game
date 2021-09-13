@@ -6,6 +6,7 @@ class Game:
         self.style = ''
         self.player1 = ''
         self.player2 = ''
+        self.ai_player = ''
         self.run_game()
         
 
@@ -22,17 +23,36 @@ class Game:
         self.style = input('Would you like to play single player or multiplayer?').lower()
         if (self.style == 'single player'):
             self.player1 = Human()
-            self.player2 = AI()
+            self.ai_player = AI()
         else:
             self.player1 = Human()
             self.player2 = Human()
 
     def display_selection(self):
-        print(f"{self.player1.name} has chosen {self.player1.gesture} and {self.player2.name} has chosen {self.player2.gesture}")
+        if (self.style == 'single player'):
+            print(f"{self.player1.name} has chosen {self.player1.gesture} and {self.ai_player.name} has chosen {self.ai_player.gesture}")
 
-    def compare_gestures(self):
-        pass
-        # if (f"{player.selection} == 'rock' && {ai.selection} == 'scissors'"):
+        else:
+            print(f"{self.player1.name} has chosen {self.player1.gesture} and {self.player2.name} has chosen {self.player2.gesture}")
+
+
+
+    def compare_gestures(self, player1, player2, ai_player):
+        if (player1.gesture == player2.gesture or player1.gesture == ai_player.gesture):
+            print("You two have tied, please select another gesture.")
+            if(self.style == 'single player'):
+                self.player1.select_gesture()
+                self.ai_player.select_gesture()
+                self.display_selection()
+            else:
+                self.player1.select_gesture()
+                self.player2.select_gesture()
+                self.display_selection()
+
+        elif (player1.gesture!=player2.gesture or player1.gesture != ai_player.gesture):
+
+
+
         #     player.score += 1
         # elif (play)
 
