@@ -26,7 +26,7 @@ class Game:
         if (self.style == 'single player'):
             self.player1 = Human()
             self.player2 = AI()
-        elif (self.stle == 'multiplayer'):
+        elif (self.style == 'multiplayer'):
             self.player1 = Human()
             self.player2 = Human()
         else:
@@ -39,66 +39,57 @@ class Game:
 
 
     def compare_gestures(self):
-        self.player1.select_gesture()
-        self.player2.select_gesture()
-        self.display_selection()
-        if (self.player1.gesture == self.player2.gesture):
-            print("You two have tied, please select another gesture.")            
+        while (self.player1.score < 2 and self.player2.score < 2):
             self.player1.select_gesture()
             self.player2.select_gesture()
             self.display_selection()
-            
-        elif (self.player1.gesture == 'rock'):
-            if (self.player2.gesture == 'scissors'or self.player2.gesture == 'lizard'):
-                self.player1.score += 1
-                print("Player 1 wins round")
-            else:
-                self.player2.score +=1
-                print("Player 2 wins round.")
-        elif(self.player1.gesture == 'scissors'):
-            if(self.player2.gesture == 'paper' or self.player2.gesture == 'lizard'):
-                self.player1.score += 1
-                print("Player 1 wins round")
-            else:
-                self.player2.score +=1
-                print("Player 2 wins round.")
-        elif(self.player1.gesture == 'paper'):
-            if(self.player2.gesture == 'rock' or self.player2.gesture == 'spock'):
-                self.player1.score += 1
-                print("Player 1 wins round")
-            else:
-                self.player2.score +=1
-                print("Player 2 wins round.")
-        elif(self.player1.gesture == 'lizard'):
-            if(self.player2.gesture == 'paper' or self.player2.gesture == 'spock'):
-                self.player1.score +=1
-                print("Player 1 wins round")
-            else:
-                self.player2.score +=1
-                print("Player 2 wins round.")
-        elif(self.player1.gesture == 'spock'):
-            if(self.player2.gesture == 'rock' or self.player2.gesture == 'scissors'):
-                self.player1.score +=1
-                print("Player 1 wins round")
-            else:
-                self.player2.score +=1
-                print("Player 2 wins round.")
+            if (self.player1.gesture == self.player2.gesture):
+                print("You two have tied, please select another gesture.")            
+                self.compare_gestures()            
+            elif (self.player1.gesture == 'rock'):
+                if (self.player2.gesture == 'scissors' or self.player2.gesture == 'lizard'):
+                    self.player1.score += 1
+                    print("Player 1 wins round")
+                else:
+                    self.player2.score +=1
+                    print("Player 2 wins round.")
+            elif(self.player1.gesture == 'scissors'):
+                if(self.player2.gesture == 'paper' or self.player2.gesture == 'lizard'):
+                    self.player1.score += 1
+                    print("Player 1 wins round")
+                else:
+                    self.player2.score +=1
+                    print("Player 2 wins round.")
+            elif(self.player1.gesture == 'paper'):
+                if(self.player2.gesture == 'rock' or self.player2.gesture == 'spock'):
+                    self.player1.score += 1
+                    print("Player 1 wins round")
+                else:
+                    self.player2.score +=1
+                    print("Player 2 wins round.")
+            elif(self.player1.gesture == 'lizard'):
+                if(self.player2.gesture == 'paper' or self.player2.gesture == 'spock'):
+                    self.player1.score +=1
+                    print("Player 1 wins round")
+                else:
+                    self.player2.score +=1
+                    print("Player 2 wins round.")
+            elif(self.player1.gesture == 'spock'):
+                if(self.player2.gesture == 'rock' or self.player2.gesture == 'scissors'):
+                    self.player1.score +=1
+                    print("Player 1 wins round")
+                else:
+                    self.player2.score +=1
+                    print("Player 2 wins round.")
 
             
             
     def end_game(self):
-        if(self.player1.score ==2):
-            print(self.player1.name + " has won the match!")
-        elif(self.player2.score == 2):
-            print(self.player2.name + " has won the match!")
+        if(self.player1.score > self.player2.score):
+            print(f"{self.player1.name} has won the match!")
         else:
-            self.compare_gestures()
+            print(f"{self.player2.name} has won the match!")
+        
 
     def gesture_validation(self):
         pass
-
-
-
-        #     player.score += 1
-        # elif (play)
-

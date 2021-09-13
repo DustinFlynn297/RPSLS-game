@@ -10,4 +10,4 @@ class Human(Player):
         self.name = input("What is your name? ")
 
     def select_gesture(self):
-        self.gesture = input("Please select a gesture form this list: \n Rock \n Paper \n Scissors \n Lizard \n Spock \n").lower()
+        self.gesture = input("Please select a gesture from this list: \n Rock \n Paper \n Scissors \n Lizard \n Spock \n").lower()
