@@ -1,8 +1,6 @@
-from player_2 import Player
-
 class Spock:
-    def __init__(self) -> None:
-        pass
+    def __init__(self, player1, player2) -> None:
+        self.spock_comparison(player1, player2)
 
     def spock_comparison(self, player1, player2):
         if(player2.gesture == 'rock' or player2.gesture == 'scissors'):

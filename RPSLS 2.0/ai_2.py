@@ -7,8 +7,8 @@ class AI(Player):
         self.ai_name()
 
     def select_gesture(self):       
-        self.gesture = random.choice(self.list_of_gestures)
+        self.gesture = random.choice(self.list_of_gestures).lower()
 
     def ai_name(self):
-        name = ["rob", "bob", "steve", "kevin"]
+        name = ["Rob", "Bob", "Steve", "Kevin"]
         self.name = random.choice(name)

@@ -11,7 +11,7 @@ class Human(Player):
         self.name_validation()
 
     def select_gesture(self):
-        self.gesture = input("Please select a gesture from this list: " + " " + self.list_of_gestures[0] + ", " + self.list_of_gestures[1] + ", " + self.list_of_gestures[2] + ", " + self.list_of_gestures[3] + ", " + self.list_of_gestures[4] + "\n").lower()
+        self.gesture = input("Please select a gesture from this list: " + " " + self.list_of_gestures[0] + ", " + self.list_of_gestures[1] + ", " + self.list_of_gestures[2] + ", " + self.list_of_gestures[3] + " or " + self.list_of_gestures[4] + "\n").lower()
         self.gesture_validation()
 
     def gesture_validation(self):

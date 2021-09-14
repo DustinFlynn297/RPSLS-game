@@ -1,8 +1,6 @@
-from player_2 import Player
-
 class Rock:
-    def __init__(self) -> None:
-        pass
+    def __init__(self, player1, player2) -> None:
+        self.rock_comparison(player1, player2)
 
     def rock_comparison(self, player1, player2):
         if (player2.gesture == 'scissors' or player2.gesture == 'lizard'):

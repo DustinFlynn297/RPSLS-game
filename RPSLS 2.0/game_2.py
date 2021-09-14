@@ -12,15 +12,12 @@ class Game:
         self.player1 = ''
         self.player2 = ''        
         self.run_game()
-        
-
 
     def run_game(self):
         self.welcome()
         self.playstyle()
         self.compare_gestures()
-        self.end_game()       
-    
+        self.end_game()    
     
     def welcome(self):
         print(f'Welcome to our game: Rock, Paper, Scissors, Lizard, Spock. \n Here are the rules: \n Rock crushes Scissors, Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons Spock, Spock smashes Scissors, and Scissors decapitates Lizard. The game is best 2 out of 3')
@@ -40,14 +37,7 @@ class Game:
     def display_selection(self):
         print(f"{self.player1.name} has chosen {self.player1.gesture} and {self.player2.name} has chosen {self.player2.gesture}")
 
-
-
-    def compare_gestures(self):
-        rock = Rock()
-        paper = Paper()
-        scissors = Scissors()
-        lizard = Lizard()
-        spock = Spock()
+    def compare_gestures(self):        
         while (self.player1.score < 2 and self.player2.score < 2):
             self.player1.select_gesture()
             self.player2.select_gesture()
@@ -56,16 +46,15 @@ class Game:
                 print("You two have tied, please select another gesture.")            
                 self.compare_gestures()            
             elif (self.player1.gesture == 'rock'):
-                rock.rock_comparison(self.player1, self.player2)
+                Rock(self.player1, self.player2)
             elif(self.player1.gesture == 'scissors'):
-                scissors.scissors_comparison(self.player1, self.player2)                
+                Scissors(self.player1, self.player2)                
             elif(self.player1.gesture == 'paper'):
-                paper.paper_comparison(self.player1, self.player2)                
+                Paper(self.player1, self.player2)                
             elif(self.player1.gesture == 'lizard'):
-                lizard.lizard_comparison(self.player1, self.player2)
+                Lizard(self.player1, self.player2)
             elif(self.player1.gesture == 'spock'):
-                spock.spock_comparison(self.player1, self.player2)
-            
+                Spock(self.player1, self.player2)            
             
     def end_game(self):
         if(self.player1.score > self.player2.score):
